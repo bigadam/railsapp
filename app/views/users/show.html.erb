@@ -16,6 +16,13 @@
   <dd><%= @user.wangwang %></dd>
 </dl>
 
+<div>
+<h3>Addresses</h3>
+<%= render @user.addresses %>
+
+</div>
+
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               users_path, :class => 'btn'  %>

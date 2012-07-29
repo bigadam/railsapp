@@ -1,38 +1,39 @@
 <%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
+<div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+        <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  </div>
-  <div class="control-group">
+</div>
+<div class="control-group">
     <%= f.label :nickname, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :nickname, :class => 'text_field' %>
+        <%= f.text_field :nickname, :class => 'text_field' %>
     </div>
-  </div>
-  <div class="control-group">
+</div>
+<div class="control-group">
     <%= f.label :phone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field' %>
+        <%= f.text_field :phone, :class => 'text_field' %>
     </div>
-  </div>
-  <div class="control-group">
+</div>
+<div class="control-group">
     <%= f.label :qq, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :qq, :class => 'text_field' %>
+        <%= f.text_field :qq, :class => 'text_field' %>
     </div>
-  </div>
-  <div class="control-group">
+</div>
+<div class="control-group">
     <%= f.label :wangwang, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :wangwang, :class => 'text_field' %>
+        <%= f.text_field :wangwang, :class => 'text_field' %>
     </div>
-  </div>
-
-  <div class="form-actions">
+</div>
+<h4>Addresses</h4>
+<%= render @user.addresses %>
+<div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
-  </div>
+    users_path, :class => 'btn' %>
+</div>
 <% end %>

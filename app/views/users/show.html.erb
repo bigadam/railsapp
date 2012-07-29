@@ -16,10 +16,11 @@
   <dd><%= @user.wangwang %></dd>
 </dl>
 
-<div>
-<h3>Addresses</h3>
+<div class="form-actions" id="addresses">
+<h3 >Addresses</h3>
 <%= render @user.addresses %>
-
+<%= link_to t('.new address'),
+              new_address_path, :class => 'btn btn-primary'  %>
 </div>
 
 

@@ -4,6 +4,7 @@ Railsapp::Application.routes.draw do
   resources :countries
 
   devise_for :users
+  devise_for :addresses
 
   get "home/index"
 

@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :nickname, :phone, :qq, :wangwang
   has_many :addresses, :dependent => :destroy
+  has_many :packages, :dependent => :destroy
 end

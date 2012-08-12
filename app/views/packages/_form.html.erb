@@ -1,0 +1,67 @@
+<%= form_for @package, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nickname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nickname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :website, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :website, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :order_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :order_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tracking_number_long, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tracking_number_long, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tracking_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tracking_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address_id, :class => 'control-label' %>
+    <div class="controls">
+    	<% @addresses.each do |address| %>
+			<%= radio_button_tag 'package[address_id]', address.id %> 
+			<%= render address %>
+	    <% end %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :package_status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :package_status, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contents, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contents, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :claim_weight, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :claim_weight, :class => 'text_field' %>
+    </div>
+  </div>
+  
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                packages_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<%- model_class = @package.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal row">
+  <dt><strong><%= model_class.human_attribute_name(:order_number) %>:</strong></dt>
+  <dd><%= @package.order_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tracking_number_long) %>:</strong></dt>
+  <dd><%= @package.tracking_number_long %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tracking_number) %>:</strong></dt>
+  <dd><%= @package.tracking_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:website) %>:</strong></dt>
+  <dd><%= @package.website %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nickname) %>:</strong></dt>
+  <dd><%= @package.nickname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @package.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address_id) %>:</strong></dt>
+  <dd><%= @package.address_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:package_status) %>:</strong></dt>
+  <dd><%= @package.package_status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contents) %>:</strong></dt>
+  <dd><%= @package.contents %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:claim_weight) %>:</strong></dt>
+  <dd><%= @package.claim_weight %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:actual_weight) %>:</strong></dt>
+  <dd><%= @package.actual_weight %></dd>
+</dl>
+
+<div class="form-actions row" >
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              packages_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_package_path(@package), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              package_path(@package),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

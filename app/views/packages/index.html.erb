@@ -1,0 +1,48 @@
+<%- model_class = Package.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+	  <th><%= model_class.human_attribute_name(:nickname) %></th>
+	  <th><%= model_class.human_attribute_name(:website) %></th>
+      <th><%= model_class.human_attribute_name(:order_number) %></th>
+      <th><%= model_class.human_attribute_name(:tracking_number) %></th>
+      <th><%= model_class.human_attribute_name(:address_id) %></th>
+      <th><%= model_class.human_attribute_name(:package_status) %></th>
+      <th><%= model_class.human_attribute_name(:contents) %></th>
+      <th><%= model_class.human_attribute_name(:claim_weight) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @packages.each do |package| %>
+      <tr>
+        <td><%= link_to package.id, package_path(package) %></td>
+        <td><%= package.nickname %></td>
+		<td><%= package.website %></td>
+		<td><%= package.order_number %></td>
+        <td><%= package.tracking_number %></td>
+        <td><%= package.address_id %></td>
+        <td><%= package.package_status %></td>
+        <td><%= package.contents %></td>
+        <td><%= package.claim_weight %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_package_path(package), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      package_path(package),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_package_path,
+            :class => 'btn btn-primary' %>

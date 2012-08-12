@@ -1,11 +1,14 @@
 Railsapp::Application.routes.draw do
+  resources :packages
+
   resources :addresses
 
   resources :countries
 
   devise_for :users
   devise_for :addresses
-
+  devise_for :packages
+  
   get "home/index"
 
   resources :users

@@ -29,10 +29,14 @@
   <%- # Uncomment if you are specifically targeting less enabled mobile browsers -%>
   <%#= stylesheet_link_tag "handheld", :media => "handheld" %>
  
-  <%= csrf_meta_tag %>
+  
  
   <%- # All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -%>
   <%= javascript_include_tag 'modernizr-1.7.min.js' %>
+  
+  <%= csrf_meta_tag %>
+  
+  
   <%= yield(:head) %>
 </head>
 <body>

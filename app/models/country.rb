@@ -1,4 +1,4 @@
 class Country < ActiveRecord::Base
-  belongs_to :address
+  has_many :address
   attr_accessible :code, :name, :timezone
 end

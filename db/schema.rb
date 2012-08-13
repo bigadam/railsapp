@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812222046) do
+ActiveRecord::Schema.define(:version => 20120813011611) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120812222046) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "user_id"
+    t.string   "name"
   end
 
   add_index "addresses", ["country_id"], :name => "index_addresses_on_country_id"
@@ -82,6 +83,18 @@ ActiveRecord::Schema.define(:version => 20120812222046) do
     t.decimal  "actual_weight"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "sub_packages", :force => true do |t|
+    t.string   "name"
+    t.integer  "package_id"
+    t.integer  "address_id"
+    t.string   "tracking_number_cn"
+    t.integer  "carrier_id"
+    t.integer  "user_id"
+    t.string   "contents"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|

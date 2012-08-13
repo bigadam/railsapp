@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_number: MyString
+  tracking_number_long: MyString
+  tracking_number: MyString
+  website: MyString
+  nickname: MyString
+  user_id: 
+  address_id: 
+  package_status: 
+  contents: MyString
+  claim_weight: 
+  actual_weight: 
+
+two:
+  order_number: MyString
+  tracking_number_long: MyString
+  tracking_number: MyString
+  website: MyString
+  nickname: MyString
+  user_id: 
+  address_id: 
+  package_status: 
+  contents: MyString
+  claim_weight: 
+  actual_weight: 

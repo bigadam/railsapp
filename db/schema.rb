@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813011611) do
+ActiveRecord::Schema.define(:version => 20120813013923) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20120813011611) do
     t.string   "tracking_number_long"
     t.string   "tracking_number"
     t.string   "website"
-    t.string   "nickname"
+    t.string   "name"
     t.integer  "user_id"
     t.integer  "address_id"
     t.integer  "package_status"

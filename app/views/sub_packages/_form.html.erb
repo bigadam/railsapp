@@ -1,0 +1,50 @@
+<%= form_for @sub_package, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :package_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :package_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :address_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tracking_number_cn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tracking_number_cn, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :carrier_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :carrier_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :user_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contents, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contents, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sub_packages_path, :class => 'btn' %>
+  </div>
+<% end %>
